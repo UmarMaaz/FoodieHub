@@ -1536,12 +1536,20 @@ data class Recipe(
     val name: String,
     val image: String,
     val description: String,
-    val nutritional_info:List<String>,
+    val nutritional_info:NutritionalInfo, // Change to an object,
     val ingredients: List<Ingredient>,
     val instructions: List<String>,
     val preparation_time: String,
     val difficulty: String,
     val tags: List<String>
+)
+
+data class NutritionalInfo( // Representing the object structure
+    val calories: String,
+    val fat: String,
+    val carbohydrates: String,
+    val protein: String,
+    val fiber: String
 )
 
 data class Ingredient(

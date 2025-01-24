@@ -2,6 +2,7 @@ package com.foodiehub
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateMapOf
@@ -86,6 +87,7 @@ class RecipeViewModel(private val context: Context) : ViewModel() {
                 sharedPreferences.edit().putString("categories_data", categoriesJson).apply()
             } catch (e: Exception) {
                 e.printStackTrace()
+                Log.e("RecipeViewModel", "Error fetching recipes", e)
             }
         }
     }
